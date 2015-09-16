@@ -2,6 +2,7 @@ var Observable = require('data/observable');
 var ObservableArray = require('data/observable-array');
 var http = require("http");
 var moment = require('moment');
+var frameModule = require('ui/frame');
 
 var bindingContext = new Observable.Observable({
     title: 'Nice title',
@@ -22,11 +23,22 @@ function loadReddit() {
         bindingContext.title = 'Reddit loaded';
 
         r.data.children.map(function(item) {
-            var out = item.data;
-            out.friendlyTime = moment(item.data.created_utc * 1000).fromNow();
-            bindingContext.myItems.push(out);
+            item.data.friendlyTime = moment(item.data.created_utc * 1000).fromNow();
+            bindingContext.myItems.push(item.data);
         });
     });
 }
 
+function itemTap(args) {
+    var item = args.view.bindingContext;
+    bindingContext.title = item.url;
+
+    var topmost = frameModule.topmost();
+    topmost.navigate({
+        moduleName: 'details',
+        context: item
+    });
+}
+
 exports.pageLoaded = pageLoaded;
+exports.itemTap = itemTap;

@@ -1,16 +1,22 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-<StackLayout>
-  <Label text="{{ title }}" />
-  <ListView items="{{ myItems }}">
-    <ListView.itemTemplate>
-      <StackLayout orientation="horizontal">
-        <Label cssClass="score" text="{{ score }}" textWrap="true" />
-        <StackLayout>
-          <Label cssClass="title" text="{{ title | $parents['ListView'].trimmer() }}" textWrap="true" />
-          <Label cssClass="author" text="{{ author + ' ' + friendlyTime }}" textWrap="true" />
+
+  <Page.actionBar>
+    <ActionBar title="RedditReader">
+    </ActionBar>
+  </Page.actionBar>
+
+  <StackLayout>
+    <Label text="{{ title }}" />
+    <ListView items="{{ myItems }}">
+      <ListView.itemTemplate>
+        <StackLayout orientation="horizontal" tap="itemTap">
+          <Label cssClass="score" text="{{ score }}" textWrap="true" />
+          <StackLayout>
+            <Label cssClass="title" text="{{ title | $parents['ListView'].trimmer() }}" textWrap="true" />
+            <Label cssClass="author" text="{{ author + ' ' + friendlyTime }}" textWrap="true" />
+          </StackLayout>
         </StackLayout>
-      </StackLayout>
-    </ListView.itemTemplate>
-  </ListView>
-</StackLayout>
+      </ListView.itemTemplate>
+    </ListView>
+  </StackLayout>
 </Page>

@@ -1,5 +1,8 @@
 var socialShare = require("nativescript-social-share");
 
+var gestures = require('ui/gestures');
+var frameModule = require('ui/frame');
+
 var bindingContext;
 
 function pageLoaded(args) {
@@ -14,3 +17,10 @@ function share() {
 
 exports.pageLoaded = pageLoaded;
 exports.share = share;
+
+
+exports.swipe = function(args) {
+	if (args.direction === gestures.SwipeDirection.right) {
+		frameModule.topmost().goBack();
+	}
+};

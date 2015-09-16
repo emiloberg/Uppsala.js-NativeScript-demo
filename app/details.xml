@@ -7,5 +7,5 @@
         </ActionBar>
     </Page.actionBar>
 
-    <WebView src="{{ url }}" />
+    <WebView src="{{ url }}" swipe="swipe" />
 </Page>

@@ -4,6 +4,9 @@ This repo contains what was demonstrated on [Uppsala.js, September 17, 2015](htt
 
 Together we built a Reddit reader with [NativeScript](http://www.nativescript.org).
 
+The [presentation (PDF) can be found here](https://github.com/emiloberg/Uppsala.js-NativeScript-demo/raw/master/docs/Presentation.pdf).
+
+
 ### Installation
 
 #### 1. Install NativeScript

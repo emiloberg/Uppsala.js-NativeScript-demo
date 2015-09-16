@@ -9,6 +9,7 @@
     }
   },
   "dependencies": {
-    "moment": "^2.10.6"
+    "moment": "^2.10.6",
+    "nativescript-social-share": "^1.1.0"
   }
 }

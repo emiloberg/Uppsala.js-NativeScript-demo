@@ -1,3 +1,11 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <Page.actionBar>
+        <ActionBar title="{{ title }}">
+            <ActionBar.actionItems>
+                <ActionItem text="Share" tap="share" ios.position="right" android.position="popup"/>
+            </ActionBar.actionItems>
+        </ActionBar>
+    </Page.actionBar>
+
     <WebView src="{{ url }}" />
 </Page>

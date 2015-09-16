@@ -9,9 +9,9 @@ var bindingContext = new Observable.Observable({
     myItems: new ObservableArray.ObservableArray([])
 });
 
-function pageLoaded(args) {
-    var page = args.object;
-    page.bindingContext = bindingContext;
+    function pageLoaded(args) {
+        var page = args.object;
+        page.bindingContext = bindingContext;
 
     loadReddit();
 }
@@ -31,8 +31,6 @@ function loadReddit() {
 
 function itemTap(args) {
     var item = args.view.bindingContext;
-    bindingContext.title = item.url;
-
     var topmost = frameModule.topmost();
     topmost.navigate({
         moduleName: 'details',

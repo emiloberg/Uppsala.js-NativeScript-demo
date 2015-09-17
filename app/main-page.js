@@ -9,9 +9,19 @@ var bindingContext = new Observable.Observable({
     myItems: new ObservableArray.ObservableArray([])
 });
 
-    function pageLoaded(args) {
-        var page = args.object;
-        page.bindingContext = bindingContext;
+function pageLoaded(args) {
+    var page = args.object;
+    page.bindingContext = bindingContext;
+
+    // Settings app bar color on iOS.
+    // Documentation: https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationBar_Class/#//apple_ref/occ/instp/UINavigationBar/barStyle
+    if (page.ios) {
+        var navigationBar = frameModule.topmost().ios.controller.navigationBar;
+        navigationBar.barTintColor = UIColor.colorWithRedGreenBlueAlpha(0.011, 0.278, 0.576, 1);
+        navigationBar.titleTextAttributes = new NSDictionary([UIColor.whiteColor()], [NSForegroundColorAttributeName]);
+        navigationBar.barStyle = 1;
+        navigationBar.tintColor = UIColor.whiteColor();
+    }
 
     loadReddit();
 }

@@ -6,6 +6,8 @@ Together we built a Reddit reader with [NativeScript](http://www.nativescript.or
 
 The [presentation (PDF) can be found here](https://github.com/emiloberg/Uppsala.js-NativeScript-demo/raw/master/docs/Presentation.pdf).
 
+If you want to, you have this code in front of you when you [watch the recorded meetup this code was created at (YouTube)](https://youtu.be/MhwBpVRfljU)
+
 
 ### Installation
 
